@@ -1,7 +1,4 @@
 Template.feelingHistoryItem.helpers({ 
-  console: function() {
-    console.log(this);
-  },
   time: function() {
   	var self = this;
   	return moment(self.submitted).format('L LT');
