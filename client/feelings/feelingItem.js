@@ -1,5 +1,5 @@
 Template.feelingItem.helpers({
-  color: function() {
-    return this.userId == Meteor.userId();
+  name: function() {
+  	return this.charAt(0).toUpperCase() + this.substring(1);
   }
 });

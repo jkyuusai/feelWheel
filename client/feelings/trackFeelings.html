@@ -1,5 +1,9 @@
 <template name="trackFeelings">
-	{{> feelingSection group="primary"}}
-	{{> feelingSection group="secondary"}}
-	{{> feelingSection group="tertiary"}}
+	<form role="form">
+		{{> feelingSection group="primary"}}
+		{{> feelingSection group="secondary"}}
+		{{> feelingSection group="tertiary"}}
+		
+		<input type="submit" value="Track Feelings" class="btn btn-primary btn-lg {{disableIfNotDone}}"/>
+	</form>
 </template>

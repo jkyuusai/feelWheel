@@ -21,8 +21,8 @@ Template.feelingSection.helpers({
 		return feelingList;
 	},
 
-	isSecondary: function() {
+	showBars: function() {
 		var self = this;			
-		return self.group === 'secondary';
+		return self.group === 'secondary' && Session.get('primary') !== null && Session.get('primary').length;
 	}
 });

@@ -1,9 +1,9 @@
 <template name="feelingSection">
-	{{#if isSecondary}} <hr/>{{/if}}
-	<div class="feelings btn-group btn-lg btn-group-justified {{group}}">  	
+	{{#if showBars}} <hr/>{{/if}}
+	<div class="feelings btn-group btn-lg btn-group-justified {{group}}" data-toggle="buttons">
 	    {{#each feelings}}
 	      {{> feelingItem}}
 	    {{/each}}	
 	</div>
-	{{#if isSecondary}} <hr/>{{/if}}
+	{{#if showBars}} <hr/>{{/if}}
 </template>

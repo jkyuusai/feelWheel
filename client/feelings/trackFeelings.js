@@ -1,14 +1,56 @@
 Template.trackFeelings.events({
-	'click .primary button': function(e, template) {
-    	e.preventDefault();    	
-    	Session.set('primary', $(e.target).val());
+	'change input:radio[name="primary"]': function(e, template) {
+    	e.preventDefault();
+    	Session.set('primary', e.target.id);
+    	Session.set('currentFeelings',[]);
 	},
-	'click button': function(e, template) {
-    	e.preventDefault();    	
+	'change input:radio': function(e, template) {
+    	e.preventDefault();
     	var feeling = {
-    		name: $(e.target).val()
+    		name: e.target.id
 		};	
 		
-		Meteor.call('trackFeeling', feeling);       
+		Meteor.call('trackFeeling', feeling, function(error, feeling) {
+			if(error) {
+				Toast.error(error.reason);
+				return;
+			}
+			var currentFeelings = Session.get('currentFeelings');
+			currentFeelings.push(feeling);
+			Session.set('currentFeelings', currentFeelings);
+		});
+    },
+    'submit': function(e, template) {
+    	e.preventDefault();
+    	var currentFeelings = Session.get('currentFeelings');
+
+    	Meteor.call('insertFeelings',currentFeelings, function(error, ids) {
+    		if(error) {
+    			Toast.error(error.reason);
+    			return;
+    		}
+
+    		/*
+    		 * reset everything
+    		 */
+    		template.$('.btn-group label').removeClass('active');
+    		template.$('input:radio').each(function(i,e) {
+    			$(e).prop('checked', false);
+    		});
+    		Session.set('primary', '');
+    		Session.set('currentFeelings', []);
+    		
+    		Toast.success('Feelings tracked!');
+    	});
     }
+});
+
+Template.trackFeelings.helpers({
+	disableIfNotDone: function() {
+		if(Session.get('currentFeelings') && Session.get('currentFeelings').length === 3) {
+			return;
+		}
+
+		return 'disabled';
+	}
 });

@@ -12,8 +12,8 @@ Feelings.deny({
 
 Meteor.methods({
   trackFeeling: function(feelingAttributes) {
-    var user = Meteor.user();          
-   
+    var user = Meteor.user();
+
     if (!user) {
       throw new Meteor.Error(401, "You need to log in first!");
     }
@@ -28,9 +28,17 @@ Meteor.methods({
       submitted: new Date().getTime()
     });
 
-    var feelingId = Feelings.insert(feeling);
+    return feeling;
+  },
 
-    return feelingId;
+  insertFeelings: function(currentFeelings) {
+    var feelingIds = [];
+
+    _.each(currentFeelings, function(f) {
+      feelingIds.push(Feelings.insert(f));
+    });
+
+    return feelingIds;
   }
 });
 
