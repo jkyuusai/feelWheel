@@ -1,0 +1,1 @@
+Toast.defaults.width='600px';
