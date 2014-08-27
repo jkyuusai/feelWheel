@@ -12,13 +12,13 @@ Feelings.deny({
 
 Meteor.methods({
   trackFeeling: function(feelingAttributes) {
-    var user = Meteor.user();        
+    var user = Meteor.user();          
    
     if (!user) {
       throw new Meteor.Error(401, "You need to log in first!");
     }
 
-    if(_.indexOf(feelingList, feelingAttributes.name === -1)) {
+    if(feelingList.indexOf(feelingAttributes.name) === -1) {
       throw new Meteor.Error(422, 'Sorry, this feeling is not currently tracked! Try again.');
     }
 

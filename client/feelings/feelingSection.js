@@ -1,20 +1,28 @@
 Template.feelingSection.helpers({
 	feelings: function() {
-		var self = this;
-		var feelingList;
+		var self = this,
+			group = self.group,
+			feelingList;
 
-		if(!self.group) {
+		if(!group) {
 			return;
 		}
 
-		if(self.group ==='primary') {
+		if(group === 'primary') {
 			feelingList = _.keys(feelingSectionMap);
-		} else {
-			if(Session.get('primary')) {
-				feelingList = feelingSectionMap[Session.get('primary')][self.group];	
-			}			
+			return feelingList;
 		}
 
+		if(!Session.get('primary')) {
+			return;
+		}
+		
+		feelingList = feelingSectionMap[Session.get('primary')][group];
 		return feelingList;
+	},
+
+	isSecondary: function() {
+		var self = this;			
+		return self.group === 'secondary';
 	}
 });
