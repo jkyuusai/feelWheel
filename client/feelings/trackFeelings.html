@@ -1,9 +1,13 @@
 <template name="trackFeelings">
-	<form role="form">
-		{{> feelingSection group="primary"}}
-		{{> feelingSection group="secondary"}}
-		{{> feelingSection group="tertiary"}}
-		
-		<input type="submit" value="Track Feelings" class="btn btn-primary btn-lg {{disableIfNotDone}}"/>
-	</form>
+	{{#unless currentUser}}
+  		<div class="jumbotron">Please log in or create an account to continue!</div>
+  	{{else}}
+		<form role="form">
+			{{> feelingSection group="primary"}}
+			{{> feelingSection group="secondary"}}
+			{{> feelingSection group="tertiary"}}
+			
+			<input type="submit" value="Track Feelings" class="btn btn-primary btn-lg {{disableIfNotDone}}"/>
+		</form>
+	{{/unless}}
 </template>
