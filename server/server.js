@@ -1,3 +1,7 @@
+Meteor.startup(function () {		
+	process.env.MAIL_URL = 'smtp://' + smtpKey + '@smtp.mailgun.org:587';
+});
+
 //TODO: Change this to a collection
 var carrierList = {
 			'AT&T': 'mms.att.net',
