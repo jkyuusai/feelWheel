@@ -2,6 +2,10 @@ Meteor.startup(function () {
 	process.env.MAIL_URL = 'smtp://' + smtpKey + '@smtp.mailgun.org:587';
 });
 
+Meteor.publish('feelings', function(userId) {		
+	return Feelings.find( {userId:userId} );
+})
+
 //TODO: Change this to a collection
 var carrierList = {
 			'AT&T': 'mms.att.net',

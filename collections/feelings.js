@@ -1,4 +1,5 @@
 Feelings = new Meteor.Collection('feelings');
+
 Feelings.allow({
   update: ownsDocument,
   remove: ownsDocument
