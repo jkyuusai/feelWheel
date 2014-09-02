@@ -1,0 +1,1 @@
+Kadira.connect(kadiraAppId, kadiraAppSecret);
