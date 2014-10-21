@@ -24,5 +24,15 @@ Template.feelingSection.helpers({
 	showBars: function() {
 		var self = this;			
 		return self.group === 'secondary' && Session.get('primary') !== null && Session.get('primary').length;
+	},
+
+	//TODO: Feels hacky, need to handle this more elegantly - replace with an actual media query
+	justifyIfNotPhone: function() {
+		console.log('test');
+		if(window.matchMedia("(min-width: 768px)").matches) {
+			return 'btn-group-justified';
+		} else {
+			return 'row';
+		}
 	}
 });
