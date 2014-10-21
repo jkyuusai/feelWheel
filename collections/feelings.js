@@ -1,4 +1,4 @@
-Feelings = new Meteor.Collection('feelings');
+Feelings = new Mongo.Collection('feelings');
 
 Feelings.allow({
   update: ownsDocument,
