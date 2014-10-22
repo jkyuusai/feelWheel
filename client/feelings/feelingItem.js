@@ -1,5 +1,5 @@
 Template.feelingItem.helpers({
   name: function() {
-  	return this.charAt(0).toUpperCase() + this.substring(1);
+  	return this.name.charAt(0).toUpperCase() + this.name.substring(1);
   }
 });

@@ -1,29 +1,29 @@
 Template.feelingSection.helpers({
 	feelings: function() {
 		var self = this,
-			group = self.group,
+			degree = self.degree,
 			feelingList;
 
-		if(!group) {
+		if(!degree) {
 			return;
 		}
 
-		if(group === 'primary') {
-			feelingList = _.keys(feelingSectionMap);
+		if(degree === 'primary') {
+			feelingList = getFeelings(null, degree);
 			return feelingList;
 		}
 
-		if(!Session.get('primary')) {
+		if(!Session.get('coreFeeling')) {
 			return;
 		}
 		
-		feelingList = feelingSectionMap[Session.get('primary')][group];
+		feelingList = getFeelings(Session.get('coreFeeling'),degree);
 		return feelingList;
 	},
 
 	showBars: function() {
 		var self = this;			
-		return self.group === 'secondary' && Session.get('primary') !== null && Session.get('primary').length;
+		return self.degree === 'secondary' && Session.get('coreFeeling') !== null && Session.get('coreFeeling').length;
 	},
 
 	//TODO: Feels hacky, need to handle this more elegantly - replace with an actual media query

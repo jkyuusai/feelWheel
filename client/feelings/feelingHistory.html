@@ -1,7 +1,3 @@
 <template name="feelingHistory">
-  <div class="feelings">
-  	{{#each feelings}}
-  		{{> feelingHistoryItem}}
-  	{{/each}}
-  </div>
+	{{> reactiveTable collection=feelings settings=settings}}
 </template>
