@@ -10,10 +10,12 @@ mrt:accounts-ui-bootstrap-3
 mrt:moment
 percolatestudio:synced-cron
 accounts-password
-mizzao:bootstrap-3
 mrt:toastjs
 meteorhacks:kadira
 iron:router
 zimme:iron-router-active
 underscore
+nemo64:bootstrap
+less
+aslagle:reactive-table
 

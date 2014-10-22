@@ -1,6 +1,8 @@
 accounts-base@1.1.2
 accounts-password@1.0.3
+anti:i18n@0.4.3
 application-configuration@1.0.3
+aslagle:reactive-table@0.4.10
 autoupdate@1.1.2
 base64@1.0.1
 binary-heap@1.0.1
@@ -29,6 +31,7 @@ iron:layout@0.4.1
 iron:router@0.9.4
 jquery@1.0.1
 json@1.0.1
+less@1.0.10
 livedata@1.0.11
 localstorage@1.0.1
 logging@1.0.4
@@ -39,13 +42,14 @@ meteorhacks:kadira@2.11.13
 meteorhacks:meteorx@1.2.0
 minifiers@1.1.1
 minimongo@1.0.4
-mizzao:bootstrap-3@3.2.0_1
 mobile-status-bar@1.0.1
 mongo-livedata@1.0.6
 mongo@1.0.7
 mrt:accounts-ui-bootstrap-3@0.3.3
 mrt:moment@2.8.1
 mrt:toastjs@2.0.6
+nemo64:bootstrap-data@3.2.0-rc2
+nemo64:bootstrap@3.2.3
 npm-bcrypt@0.7.7
 observe-sequence@1.0.3
 ordered-dict@1.0.1
