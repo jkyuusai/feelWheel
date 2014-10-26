@@ -1,0 +1,12 @@
+<template name="currentFeelings">
+	<ol class="breadcrumb">
+	<li class="active">I'm feeling</li>
+		{{#each currentFeelings}}
+			{{> currentFeeling}}
+		{{/each}}
+	</ol>
+</template>
+
+<template name="currentFeeling">
+ 	<li><a id={{name}} href="#">{{upperName}}</a></li>	  
+</template>

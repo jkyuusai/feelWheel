@@ -2,6 +2,7 @@
 	{{#unless currentUser}}
   		<div class="jumbotron">Please log in or create an account to continue!</div>
   	{{else}}
+	  	{{> currentFeelings }}
 		<form role="form">
 			{{> feelingSection }}			
 			<br/>
