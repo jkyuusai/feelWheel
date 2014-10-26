@@ -1,11 +1,7 @@
 Template.trackFeelings.events({
-	'change input:radio[name="primary"]': function(e, template) {
-    	e.preventDefault();
-    	Session.set('coreFeeling', e.target.id);
-    	Session.set('currentFeelings',[]);
-	},
 	'change input:radio': function(e, template) {
     	e.preventDefault();
+        Session.set('currentFeeling', e.target.id);
     	var feeling = {
     		name: e.target.id
 		};	
@@ -37,7 +33,7 @@ Template.trackFeelings.events({
     		template.$('input:radio').each(function(i,e) {
     			$(e).prop('checked', false);
     		});
-    		Session.set('coreFeeling', '');
+    		Session.set('currentFeeling', '');
     		Session.set('currentFeelings', []);
     		
     		Toast.success('Feelings tracked!');

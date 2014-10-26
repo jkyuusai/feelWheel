@@ -10,7 +10,7 @@ Template.feelingHistory.helpers({
 			    { 
 			    	key: 'name', 
 			    	label: 'Name', 
-			    	fn: function(v,o) { return v.charAt(0).toUpperCase() + v.substring(1) }
+			    	fn: function(v,o) { return upperCase(v) }
 			    },
 			    { 
 			    	key: 'submitted', 
@@ -18,8 +18,16 @@ Template.feelingHistory.helpers({
 			    	fn: function(v, o) { return moment(v).format('dddd, MMMM Do YYYY, h:mm:ss A') },
 			    	sortByValue: true,
 			    	sort: 'descending'
+				},
+				{
+					key: 'coreFeeling',
+					label: 'Category',
+					fn: function(v,o) { return upperCase(v) }
 				}
-			] 
+			] ,
+			rowClass: function(feeling) {
+				return 'feeling-' + feeling.coreFeeling					
+			}
         };
-  }
+  }  
 });

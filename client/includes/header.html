@@ -12,8 +12,8 @@
       </div>
       <div class="collapse navbar-collapse" id="navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li class="{{ isActiveRoute 'trackFeelings'}}"><a href="{{pathFor 'trackFeelings'}}">Track</a></li>
-          <li class="{{ isActiveRoute 'feelingHistory'}}"><a href="{{pathFor 'feelingHistory'}}">History</a></li>
+          <li class="{{ isActiveRoute regex='trackFeelings'}}"><a href="{{pathFor 'trackFeelings'}}">Track</a></li>
+          <li class="{{ isActiveRoute regex='feelingHistory'}}"><a href="{{pathFor 'feelingHistory'}}">History</a></li>
           <!--<li class="{{ isActiveRoute 'manageReminders'}}"><a href="{{pathFor 'manageReminders'}}">Reminder</a></li>-->
         </ul>        
         <ul class="nav navbar-nav navbar-right">

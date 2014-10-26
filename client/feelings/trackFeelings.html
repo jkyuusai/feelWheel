@@ -3,9 +3,7 @@
   		<div class="jumbotron">Please log in or create an account to continue!</div>
   	{{else}}
 		<form role="form">
-			{{> feelingSection degree="primary"}}
-			{{> feelingSection degree="secondary"}}
-			{{> feelingSection degree="tertiary"}}
+			{{> feelingSection }}			
 			<br/>
 			<input type="submit" value="Track Feelings" class="btn btn-primary btn-lg pull-right {{disableIfNotDone}}"/>
 		</form>
