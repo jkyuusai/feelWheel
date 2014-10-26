@@ -1,12 +1,12 @@
-<template name="currentFeelings">
-	<ol class="breadcrumb">
-	<li class="active">I'm feeling</li>
+<template name="currentFeelings">	
+	<div class="btn-group btn-breadcrumb">
+		<a href="#" class="btn btn-default reset"><i class="glyphicon glyphicon-user"></i></a>
 		{{#each currentFeelings}}
 			{{> currentFeeling}}
 		{{/each}}
-	</ol>
+	</div>
 </template>
 
-<template name="currentFeeling">
- 	<li><a id={{name}} href="#">{{upperName}}</a></li>	  
+<template name="currentFeeling"> 	
+ 	<a id="{{name}}" href="#" class="btn btn-default">{{upperName}}</a> 		  
 </template>
