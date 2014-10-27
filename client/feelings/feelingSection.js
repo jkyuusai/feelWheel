@@ -13,3 +13,9 @@ Template.feelingSection.helpers({
 		}
 	}   
 });
+
+Template.feelingItem.helpers({
+  name: function() {
+  	return upperCase(this);
+  }
+});

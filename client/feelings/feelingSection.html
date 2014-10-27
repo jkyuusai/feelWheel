@@ -1,7 +1,14 @@
 <template name="feelingSection">	
-	<div class="feelings btn-group btn-lg {{justifyIfNotPhone}}" data-toggle="buttons">
+	<div class="feelings">    
 	    {{#each feelings}}
 	      {{> feelingItem}}
-	    {{/each}}	
-	</div>	
+	    {{/each}}		
+	</div>
+	{{#unless feelings}}	
+		<button type="submit" class="btn btn-primary btn-lg btn-block">Track Feelings</button>
+	{{/unless}}
+</template>
+
+<template name="feelingItem">  	
+  	<button type="button" class="btn btn-lg btn-block select-feeling" id="{{.}}">{{name}} </button>
 </template>

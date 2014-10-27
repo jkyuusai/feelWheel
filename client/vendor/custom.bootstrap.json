@@ -26,11 +26,11 @@
   "progress-bars":        false,
   "media":                true,
   "list-group":           false,
-  "panels":               false,
+  "panels":               true,
   "wells":                false,
   "close":                false,
 
-  "component-animations": false,
+  "component-animations": true,
   "dropdowns":            true,
   "modals":               true,
   "tooltip":              false,
