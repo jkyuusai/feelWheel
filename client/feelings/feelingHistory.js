@@ -26,7 +26,7 @@ Template.feelingHistory.helpers({
 				}
 			] ,
 			rowClass: function(feeling) {
-				return 'feeling-' + feeling.coreFeeling					
+				return 'feeling-' + color(feeling.name)
 			}
         };
   }  

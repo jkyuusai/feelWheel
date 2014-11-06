@@ -29,3 +29,27 @@ upperCase = function(s) {
 findFeeling = function(feelingName) {
 	return root.first(function(n){ return n.model.id === feelingName });
 }
+
+color = function(feelingName) {
+	var node = findFeeling(feelingName),
+		path,
+		distanceFromPrimary;
+
+  	if(!node) {
+  		return;
+  	}
+
+  	path = node.getPath();
+
+  	if(!path) {
+  		return;
+  	}
+
+  	distanceFromPrimary = path.length - 2;
+
+  	if(distanceFromPrimary) {
+  		return path[1].model.id + '-child-' + distanceFromPrimary;
+  	}      
+
+  	return node.model.id;
+}
